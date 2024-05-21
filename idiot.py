@@ -25,7 +25,7 @@ def play_gif(imagelist, label):
     label.config(image=label.img)
     label.after(100, play_gif, imagelist, label) 
 
-with Image.open(f".\\img\\youareanidiot.gif") as im:
+with Image.open(f".\\youareanidiot.gif") as im:
         imagelist = cycle(ImageSequence.all_frames(im))
     
 for _ in range(0, (20)):
@@ -35,7 +35,7 @@ for _ in range(0, (20)):
         y_pos = random.randint(0,x.winfo_screenheight())
         x.geometry(f"160x117+{x_pos}+{y_pos}")
         x.resizable(False, False)
-        yaai = tk.PhotoImage(file=f".\\img\\youareanidiot.gif", format="gif -index 2")
+        yaai = tk.PhotoImage(file=f".\\youareanidiot.gif", format="gif -index 2")
         y = ttk.Label(x, image=yaai)
         y.pack()
         x.lift()
