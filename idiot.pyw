@@ -109,7 +109,6 @@ while True:
                 x[2] += x[4]
             except Exception as e:
                 _what = random.randint(1, 100)
-                _what = 4
                 _x = list_of_windows.index(x)
                 del list_of_windows[_x]
                 if _what == 69:
